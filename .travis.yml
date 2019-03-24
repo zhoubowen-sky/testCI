@@ -2,8 +2,13 @@ language: go
 go:
   - 1.12.x
 
+before_install:
+
 install:
   - echo "install func"
 
+before_script:
+
 script:
   - echo "script func"
+  - make build
