@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func main() {
 	fmt.Println("hello")
@@ -9,6 +12,15 @@ func main() {
 		fmt.Println(Add(4.4, 90))
 	}()
 
+	go func() {
+		fmt.Println(Add(4.4, 90))
+	}()
+
+	go func() {
+		fmt.Println(Add(4.4, 90))
+	}()
+
+	time.Sleep(time.Second * 10)
 }
 
 func Add(x, y float64) float64 {
